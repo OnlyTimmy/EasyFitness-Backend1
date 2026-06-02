@@ -3,14 +3,20 @@ package be.ucll.backend.easyfitness.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "EXERCISES")
 public class Exercise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
+    @Column(name = "SETS_AMOUNT")
     private int sets;
+    @Column(name = "REPS")
     private int reps;
+    @Column(name = "WEIGHT")
     private double weight;
+    @Column(name = "NAME")
     private String name;
 
     protected Exercise() {
