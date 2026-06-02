@@ -19,6 +19,11 @@ public class ExerciseController {
         return exerciseService.getExercises();
     }
 
+    @GetMapping("/search")
+    public List<Exercise> getExercisesByNameAndSet(@RequestParam String name, @RequestParam int sets) {
+        return exerciseService.getExercisesByNameAndSet(name, sets);
+    }
+
     @GetMapping("/{reps}")
     public List<Exercise> getExercisesWithMinimumReps(@PathVariable int reps) {
         return exerciseService.getExercisesWithMinimumReps(reps);

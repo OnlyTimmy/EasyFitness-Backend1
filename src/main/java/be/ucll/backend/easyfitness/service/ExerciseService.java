@@ -17,6 +17,10 @@ public class ExerciseService {
         return exerciseRepository.findAll();
     }
 
+    public List<Exercise> getExercisesByNameAndSet(String name, int sets) {
+        return exerciseRepository.findByNameContainingIgnoreCaseAndSetsLessThan(name, sets);
+    }
+
     public List<Exercise> getExercisesWithMinimumReps(int reps) {
         return exerciseRepository.findByRepsGreaterThanEqual(reps);
     }
