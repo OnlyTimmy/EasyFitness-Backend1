@@ -16,4 +16,9 @@ public class ExerciseService {
     public List<Exercise> getExercises() {
         return exerciseRepository.findAll();
     }
+
+    public List<Exercise> getExercisesWithMinimumReps(int reps) {
+        return exerciseRepository.findByRepsGreaterThanEqual(reps);
+    }
+
 }

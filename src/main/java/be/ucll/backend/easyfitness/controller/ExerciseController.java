@@ -18,4 +18,10 @@ public class ExerciseController {
     public List<Exercise> getExercises() {
         return exerciseService.getExercises();
     }
+
+    @GetMapping("/{reps}")
+    public List<Exercise> getExercisesWithMinimumReps(@PathVariable int reps) {
+        return exerciseService.getExercisesWithMinimumReps(reps);
+    }
+
 }
