@@ -29,4 +29,14 @@ public class ExerciseService {
         return exerciseRepository.save(exercise);
     }
 
+    public String deleteExercise(Long id) {
+        if (exerciseRepository.findById(id).isEmpty()) {
+            throw new IllegalArgumentException("Exercise with id " + id + " does not exist");
+        }
+
+        Exercise exercise = exerciseRepository.findById(id).get();
+        exerciseRepository.delete(exercise);
+        return "Exercise deleted";
+    }
+
 }
