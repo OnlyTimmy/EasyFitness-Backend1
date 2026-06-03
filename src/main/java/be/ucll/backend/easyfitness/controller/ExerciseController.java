@@ -29,4 +29,9 @@ public class ExerciseController {
         return exerciseService.getExercisesWithMinimumReps(reps);
     }
 
+    @PostMapping
+    public Exercise addExercise(@RequestBody Exercise exercise) {
+        return exerciseService.addExercise(exercise);
+    }
+
 }

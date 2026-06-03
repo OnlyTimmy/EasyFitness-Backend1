@@ -11,9 +11,9 @@ public class Exercise {
     @Column(name = "ID")
     private Long id;
     @Column(name = "SETS_AMOUNT")
-    private int sets;
+    private int sets = 3;
     @Column(name = "REPS")
-    private int reps;
+    private int reps = 8;
     @Column(name = "WEIGHT")
     private double weight;
     @Column(name = "NAME")

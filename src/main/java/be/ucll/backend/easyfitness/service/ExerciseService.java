@@ -25,4 +25,8 @@ public class ExerciseService {
         return exerciseRepository.findByRepsGreaterThanEqual(reps);
     }
 
+    public Exercise addExercise(Exercise exercise) {
+        return exerciseRepository.save(exercise);
+    }
+
 }
