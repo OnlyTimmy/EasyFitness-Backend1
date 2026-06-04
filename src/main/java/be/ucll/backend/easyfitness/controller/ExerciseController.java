@@ -34,7 +34,7 @@ public class ExerciseController {
         return exerciseService.addExercise(exercise);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}", produces = "text/plain")
     public String deleteExercise(@PathVariable Long id) {
         return exerciseService.deleteExercise(id);
     }

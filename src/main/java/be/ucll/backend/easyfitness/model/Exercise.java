@@ -51,7 +51,7 @@ public class Exercise {
 
     public void setReps(int reps) {
         if (reps < 1 || reps > 15) {
-            throw new IllegalArgumentException("Het aantal herhalingen moet tussen 1 en 15 liggen, grenswaarden inbegrepen");
+            throw new IllegalArgumentException("Amount of reps must be between 1 and 15, boundaries included");
         }
 
         this.reps = reps;
@@ -71,7 +71,7 @@ public class Exercise {
 
     private void setName(String name) {
         if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("De naam van een oefening moet ingevuld zijn");
+            throw new IllegalArgumentException("Name cannot be null or blank");
         }
 
         this.name = name;
