@@ -24,8 +24,13 @@ public class WorkoutController {
         return workoutService.addExerciseToWorkout(workoutID, exerciseID);
     }
 
-    @PutMapping("/start/{workoutID}")
+    @PutMapping(value = "/start/{workoutID}", produces = "text/plain")
     public String startWorkout(@PathVariable Long workoutID) {
         return workoutService.startWorkout(workoutID);
+    }
+
+    @PutMapping(value = "/stop/{workoutID}", produces = "text/plain")
+    public String stopWorkout(@PathVariable Long workoutID) {
+        return workoutService.stopWorkout(workoutID);
     }
 }

@@ -88,4 +88,8 @@ public class Workout {
     public void startWorkout() {
         setStatus(Status.BUSY);
     }
+
+    public void stopWorkout() {
+        setStatus(Status.FINISHED);
+    }
 }

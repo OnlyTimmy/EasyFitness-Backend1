@@ -58,4 +58,20 @@ public class WorkoutService {
         workoutRepository.save(workout);
         return "Workout started";
     }
+
+    public String stopWorkout(Long workoutID) {
+        if (workoutRepository.findById(workoutID).isEmpty()) {
+            throw new WorkoutServiceException("Workout with id " + workoutID + " does not exist");
+        }
+
+        Workout workout = workoutRepository.findById(workoutID).get();
+
+        if (workout.getStatus() != Status.BUSY) {
+            throw new WorkoutServiceException("Workout not in progress");
+        }
+
+        workout.stopWorkout();
+        workoutRepository.save(workout);
+        return "Workout stopped";
+    }
 }
