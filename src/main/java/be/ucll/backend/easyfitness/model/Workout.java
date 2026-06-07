@@ -80,4 +80,8 @@ public class Workout {
     public List<Exercise> getExercises() {
         return exercises;
     }
+
+    public void addExercise(Exercise exercise) {
+        this.exercises.add(exercise);
+    }
 }

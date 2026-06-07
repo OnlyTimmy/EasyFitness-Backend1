@@ -31,7 +31,7 @@ public class ExerciseService {
 
     public String deleteExercise(Long id) {
         if (exerciseRepository.findById(id).isEmpty()) {
-            throw new IllegalArgumentException("Exercise with id " + id + " does not exist");
+            throw new ExerciseServiceException("Exercise with id " + id + " does not exist");
         }
 
         Exercise exercise = exerciseRepository.findById(id).get();

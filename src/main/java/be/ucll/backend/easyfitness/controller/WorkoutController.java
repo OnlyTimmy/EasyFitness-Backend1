@@ -3,9 +3,7 @@ package be.ucll.backend.easyfitness.controller;
 import be.ucll.backend.easyfitness.model.Workout;
 import be.ucll.backend.easyfitness.service.WorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +17,10 @@ public class WorkoutController {
     @GetMapping
     public List<Workout> getWorkouts() {
         return workoutService.getWorkouts();
+    }
+
+    @PostMapping(value = "/{workoutID}", produces = "text/plain")
+    public String addExerciseToWorkout(@PathVariable Long workoutID, @RequestParam Long exerciseID) {
+        return workoutService.addExerciseToWorkout(workoutID, exerciseID);
     }
 }
