@@ -3,6 +3,8 @@ package be.ucll.backend.easyfitness.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "WORKOUTS")
@@ -21,6 +23,13 @@ public class Workout {
     private Status status;
     @Column(name = "CREATION_DATE")
     private LocalDate creationDate;
+    @ManyToMany
+    @JoinTable(
+            name = "WORKOUT_EXERCISES",
+            joinColumns = @JoinColumn(name = "WORKOUT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "EXERCISE_ID")
+    )
+    private List<Exercise> exercises = new ArrayList<>();
 
     protected Workout() {
     }
@@ -66,5 +75,9 @@ public class Workout {
 
     private void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public List<Exercise> getExercises() {
+        return exercises;
     }
 }

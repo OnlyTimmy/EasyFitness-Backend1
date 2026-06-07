@@ -1,6 +1,10 @@
 package be.ucll.backend.easyfitness.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "EXERCISES")
@@ -18,6 +22,9 @@ public class Exercise {
     private double weight;
     @Column(name = "NAME")
     private String name;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "exercises")
+    private List<Workout> workouts = new ArrayList<>();
 
     protected Exercise() {
     }
@@ -76,4 +83,9 @@ public class Exercise {
 
         this.name = name;
     }
+
+    public List<Workout> getWorkouts() {
+        return workouts;
+    }
+
 }
