@@ -84,4 +84,8 @@ public class Workout {
     public void addExercise(Exercise exercise) {
         this.exercises.add(exercise);
     }
+
+    public void startWorkout() {
+        setStatus(Status.BUSY);
+    }
 }

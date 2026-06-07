@@ -23,4 +23,9 @@ public class WorkoutController {
     public String addExerciseToWorkout(@PathVariable Long workoutID, @RequestParam Long exerciseID) {
         return workoutService.addExerciseToWorkout(workoutID, exerciseID);
     }
+
+    @PutMapping("/start/{workoutID}")
+    public String startWorkout(@PathVariable Long workoutID) {
+        return workoutService.startWorkout(workoutID);
+    }
 }
