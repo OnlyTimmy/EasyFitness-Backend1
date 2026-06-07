@@ -1,3 +1,7 @@
+// Tim Harmsen
+// 7 juni 2026
+// EasyFitness eindopdracht Backend 1
+
 package be.ucll.backend.easyfitness;
 
 import org.springframework.boot.SpringApplication;
